@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --surface-page: #f8fafc;
+  --surface-card: #ffffff;
+  --surface-muted: #f1f5f9;
+  --surface-subtle: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-default: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent-blue: #1a73e8;
+  --accent-blue-soft: #e8f0fe;
+  --accent-green: #1e8e3e;
+  --accent-green-soft: #e6f4ea;
+  --accent-amber: #b06000;
+  --accent-amber-soft: #fef7e0;
+  --accent-red: #d93025;
+  --accent-red-soft: #fce8e6;
+}
+
+.dark {
+  --surface-page: #0b1120;
+  --surface-card: #111827;
+  --surface-muted: #1e293b;
+  --surface-subtle: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-default: #1e293b;
+  --border-strong: #334155;
+  --accent-blue: #60a5fa;
+  --accent-blue-soft: rgba(59, 130, 246, 0.14);
+  --accent-green: #4ade80;
+  --accent-green-soft: rgba(34, 197, 94, 0.14);
+  --accent-amber: #fbbf24;
+  --accent-amber-soft: rgba(245, 158, 11, 0.14);
+  --accent-red: #f87171;
+  --accent-red-soft: rgba(239, 68, 68, 0.14);
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--surface-page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.editorial-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.dark .editorial-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.editorial-card-interactive {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.editorial-card-interactive:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.dark .editorial-card-interactive:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
